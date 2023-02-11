@@ -23,7 +23,7 @@ def generator():
     print("APPENDED DETAILS")
     #for generating the image related to the person
     '''creating new prompt for image of generated persona'''
-    prompt_img= "Photo for resume  of {}year old {} from {} doing {}".format(response["Age"],response["Gender"],response["Country"],response["Occupation"])
+    prompt_img= "Photo for  {}year old {} from {} doing {}".format(response["Age"],response["Gender"],response["Country"],response["Occupation"])
     response = openai.Image.create(
         prompt=prompt_img,
         n=1,
