@@ -1,27 +1,30 @@
 import React, { useState } from "react";
+import axios from "axios";
 
-const App = () => {
-  const [textValue, setTextValue] = useState("");
+function App() {
+  const [inputValue, setInputValue] = useState("");
+  const [details, setDetails] = useState([]);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await fetch("http://127.0.0.1:5000/get_info", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ text: textValue }),
-    });
-    const data = await response.json();
-    console.log(data);
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const response = await axios.get(`http://127.0.0.1:5000/get_info`);
+    console.log(response.data);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <textarea value={textValue} onChange={(e) => setTextValue(e.target.value)} />
-      <button type="submit">Submit</button>
-    </form>
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(event) => setInputValue(event.target.value)}
+        />
+        <button type="submit">Submit</button>
+      </form>
+      
+    </div>
   );
-};
+}
 
 export default App;
