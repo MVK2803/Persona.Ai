@@ -1,6 +1,6 @@
-## Random Persona Generator
+## Persona.AI
 
-The Random Persona Generator project is a tool that utilizes the power of OpenAI's GPT-3 API (DALL·E) to generate a random persona including their biodata and a AI-generated image. This project showcases the capabilities of OpenAI's API to generate diverse and unique outputs based on given inputs.
+Persona.AI project is a tool that utilizes the power of OpenAI's GPT-3 API (DALL·E) to generate a random persona including their biodata and an AI-generated image. This project showcases the capabilities of OpenAI's API to generate diverse and unique outputs based on given inputs.
 
 The biodata of the persona is generated using OpenAI's GPT-3 language model, which has been trained on a large corpus of text data and can generate human-like text. The generated biodata includes details such as the persona's name, age, occupation, location, and other personal information.
 
