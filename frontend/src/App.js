@@ -44,7 +44,7 @@ function App() {
       <div className="fields-container">
         {fields}
       </div>
-      <button className="button" onClick={handleSubmit}>Generete Persona</button>
+      <button className="button" onClick={handleSubmit}>⭯</button>
     </div>
     </>
   );

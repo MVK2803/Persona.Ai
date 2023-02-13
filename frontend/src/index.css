@@ -29,6 +29,7 @@ main {
   flex-direction: row;
   align-items: center;
   margin-top: 10px;
+  margin-right: 20px;
 }
 
 .label {
@@ -55,7 +56,8 @@ main {
   border-radius: 10px;
   align-self: center;
   background-color: rgb(170, 181, 25);
-  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 18px;
   color: white;
 }
 
@@ -66,10 +68,10 @@ main {
   align-self: center;
   margin-top:10px;
  
-  border-radius: 3px;
+  border-radius: 5px;
  
-  
-  color: #12b558;
+  background-color: #528539;
+  color: #183849;
   display: flex;
   font-family: 'Kanit', sans-serif;
   font-size: 20px;
