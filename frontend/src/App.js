@@ -17,8 +17,9 @@ function App() {
       const imgElement = document.getElementById('img');
       imgElement.src = imageUrl;*/
       let fieldsArray = [];
-      let labels=["name","ageed","monic","catal","foran"]
-      for (let i = 0; i < 5; i++) {
+      let labels=["Name","Age","Gender","Occupation","Country","Education"]
+      
+      for (let i = 0; i < 6; i++) {
         fieldsArray.push(
           <div key={i} className="field">
             <label className="label">{labels[i]}</label>
@@ -27,7 +28,7 @@ function App() {
         );
       }
       setFields(fieldsArray);
-
+      
     }
     catch(err)
     {
