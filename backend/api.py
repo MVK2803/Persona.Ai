@@ -1,7 +1,7 @@
 import openai
 "==============="
 def generator():
-    openai.api_key="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"
+    openai.api_key="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"
     #for generating the details of the person
 
     completion = openai.Completion.create(

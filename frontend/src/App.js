@@ -4,19 +4,22 @@ import axios from "axios";
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [img,setImg]=useState();
+  const[button,setButton]=useState("⭯")
   const [fields, setFields] = useState([]);
   const handleSubmit = async (event) => {
     event.preventDefault();
     try{
       
       var str;
+      setButton("LOADING ....");
       const response = await axios.get(`http://127.0.0.1:5000/get_info`);
       const image = new Blob([Uint8Array.from(atob(response.data.image), c => c.charCodeAt(0))], { type: 'image/png' });
       str=response.data.text.message;
+      setButton("⭯");
       const imageUrl = URL.createObjectURL(image);
       //console.log(imageUrl);
-      //const imgElement = document.getElementById('img');
-      //imgElement.src = imageUrl;
+      const imgElement = document.getElementById('img');
+      imgElement.src = imageUrl;
       let fieldsArray = [];
       let labels=["Name","Age","Gender","Occupation","Country","Education"]
       for (let i = 0; i < 6; i++) {
@@ -29,6 +32,7 @@ function App() {
       }
       setFields(fieldsArray);
       
+      
     }
     catch(err)
     {
@@ -40,12 +44,13 @@ function App() {
     <>
     <nav className="navbar">PERSONA.AI</nav>
     <div className="container">
-      
+    <img src="image.png" id="img" />
+
       
       <div className="fields-container">
         {fields}
       </div>
-      <button className="button" onClick={handleSubmit}>⭯</button>
+      <button className="button" onClick={handleSubmit}>{button}</button>
     </div>
     </>
   );
