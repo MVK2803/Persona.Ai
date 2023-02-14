@@ -10,5 +10,10 @@ The project is built using the Flask web framework, which allows it to be served
 
 In conclusion, the Random Persona Generator is an interesting and fun tool that demonstrates the capabilities of OpenAI's API to generate diverse outputs based on user inputs. It is a great example of how AI can be used to create unique and personalized content.
 
+## UI
+-----------------------------------------------------------------------------------------------------------------------------------
 
+![image](https://user-images.githubusercontent.com/90597530/218630333-3c1ae8fa-7c56-4ba4-a87a-54404699eb8b.png)
+
+![image](https://user-images.githubusercontent.com/90597530/218630420-3161c404-33d5-4a8b-b746-da3b0afbe1d8.png)
 
