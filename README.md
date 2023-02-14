@@ -17,3 +17,23 @@ In conclusion, the Random Persona Generator is an interesting and fun tool that 
 
 ![image](https://user-images.githubusercontent.com/90597530/218630420-3161c404-33d5-4a8b-b746-da3b0afbe1d8.png)
 
+
+
+## Deployment
+
+To deploy this project run
+
+```bash
+  npm run deploy
+```
+
+
+## Installation
+
+Install my-project with npm
+
+```bash
+  npm install my-project
+  cd my-project
+```
+    
