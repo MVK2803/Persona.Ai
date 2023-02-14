@@ -8,22 +8,22 @@ function App() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try{
-      /*console.log("SUCESS");
+      
+      var str;
       const response = await axios.get(`http://127.0.0.1:5000/get_info`);
       const image = new Blob([Uint8Array.from(atob(response.data.image), c => c.charCodeAt(0))], { type: 'image/png' });
-      setInputValue(JSON.stringify(response.data.text.message));
+      str=response.data.text.message;
       const imageUrl = URL.createObjectURL(image);
       //console.log(imageUrl);
-      const imgElement = document.getElementById('img');
-      imgElement.src = imageUrl;*/
+      //const imgElement = document.getElementById('img');
+      //imgElement.src = imageUrl;
       let fieldsArray = [];
       let labels=["Name","Age","Gender","Occupation","Country","Education"]
-      
       for (let i = 0; i < 6; i++) {
         fieldsArray.push(
           <div key={i} className="field">
             <label className="label">{labels[i]}</label>
-            <input type="text" className="input" />
+            <label type="text" className="input" >{str[labels[i]]}</label>
           </div>
         );
       }
@@ -32,7 +32,7 @@ function App() {
     }
     catch(err)
     {
-      alert("TRY RELOADING .......");
+      alert(err);
     }
   };
 

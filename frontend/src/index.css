@@ -38,10 +38,12 @@ main {
   width: 100px;
   margin-right: 10px;
   text-align: right;
+  font-weight: 700;
 }
 
 .input {
   width: 200px;
+  color: #0e3144;
   
 }
 .navbar {
@@ -62,6 +64,9 @@ main {
   padding-top: 10px;
   padding-bottom: 18px;
   color: white;
+  
+  background: #15ac77;
+  border-radius: 20px;
   
 }
 
