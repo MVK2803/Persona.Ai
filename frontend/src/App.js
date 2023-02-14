@@ -3,7 +3,7 @@ import axios from "axios";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
-  const [img,setImg]=useState();
+  const [imageUrl, setImageUrl] = useState('');
   const[button,setButton]=useState("⭯")
   const [fields, setFields] = useState([]);
   const handleSubmit = async (event) => {
@@ -17,9 +17,7 @@ function App() {
       str=response.data.text.message;
       setButton("⭯");
       const imageUrl = URL.createObjectURL(image);
-      //console.log(imageUrl);
-      const imgElement = document.getElementById('img');
-      imgElement.src = imageUrl;
+      setImageUrl(imageUrl);
       let fieldsArray = [];
       let labels=["Name","Age","Gender","Occupation","Country","Education"]
       for (let i = 0; i < 6; i++) {
@@ -35,8 +33,8 @@ function App() {
       
     }
     catch(err)
-    {
-      alert(err);
+    { setButton("⭯");
+      alert("API ERROR_TRY RELOADING");
     }
   };
 
@@ -44,7 +42,7 @@ function App() {
     <>
     <nav className="navbar">PERSONA.AI</nav>
     <div className="container">
-    <img src="image.png" id="img" />
+    {imageUrl && <img className="img" src={imageUrl} alt="Placeholder" />}
 
       
       <div className="fields-container">

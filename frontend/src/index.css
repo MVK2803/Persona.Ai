@@ -101,3 +101,12 @@ main {
 .button:hover {
   transform: 0.6;
 }
+.img
+{
+  border-radius: 50%;
+  width: 200px;
+  height:200px;
+  margin-bottom: 30px;
+  border: 5px solid #0e3144b0;
+  align-self: center;
+}
