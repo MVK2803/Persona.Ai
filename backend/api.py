@@ -2,7 +2,7 @@ import openai
 
 def generator():
     # Set OpenAI API key
-    openai.api_key="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"
+    openai.api_key=""
 
     # Generate details of a random person using OpenAI's GPT-3 API
     completion = openai.Completion.create(
