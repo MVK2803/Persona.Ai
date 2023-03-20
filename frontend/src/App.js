@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 
 function App() {
-  const [inputValue, setInputValue] = useState("");
   const [imageUrl, setImageUrl] = useState('');
   const[button,setButton]=useState("⭯")
   const [fields, setFields] = useState([]);
@@ -42,9 +41,11 @@ function App() {
     <>
     <nav className="navbar">PERSONA.AI</nav>
     <div className="container">
-    {imageUrl && <img className="img" src={imageUrl} alt="Placeholder" />}
+      <div className="left-div">
+          {imageUrl && <img className="img" src={imageUrl} alt="Placeholder" />}
 
-      
+      </div>
+      <div className="vertical-line"></div>
       <div className="fields-container">
         {fields}
       </div>
