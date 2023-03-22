@@ -17,12 +17,17 @@
 .img {
   max-width: 100%;
   height: auto;
+  border: 2px solid;
+  padding: 10px;
+  background-color: #8f14a2;
+  
 }
 
 .vertical-line {
   height: 50vh;
   
-  border: 1px solid;
+  border: 2px solid ;
+  border-image: linear-gradient(to top, rgb(192, 199, 194), rgb(117, 205, 82)) 1;
 }
 
 .fields-container {
@@ -74,7 +79,7 @@
 }
 
 body
-{background-color: rgba(0, 0, 0, 0.338);}
+{background-image: linear-gradient(to left, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);}
 
 .navbar{
   font-family: 'Kanit', sans-serif;
@@ -83,5 +88,5 @@ body
   text-align: center;
   border-radius: 5px;
   text-align: center;
-  color: #fff;
+  color: #f7f5ed;
 }
