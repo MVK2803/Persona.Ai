@@ -115,6 +115,7 @@ body
   border-radius: 5px;
   margin-bottom: 20px;
   color: #18bbbe;
+  background-color: #7181855c;
 }
 .btn-grp {
   padding-top:20px;
@@ -145,7 +146,7 @@ body
   margin-bottom: 10px;
   padding-bottom: 8px;
   padding-top: 10px;
-  
+
 }
 
 .line {
