@@ -15,8 +15,7 @@ In conclusion, the Random Persona Generator is an interesting and fun tool that 
 
 
 
-![image](https://user-images.githubusercontent.com/90597530/229855309-be7c97c5-60ff-4a72-82f6-9ac9f8802eb3.png)
-
+![image](https://user-images.githubusercontent.com/90597530/230110752-a083cb01-d2f9-429e-a5a1-b581eed02945.png)
 
 
 
