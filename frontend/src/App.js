@@ -1,69 +1,85 @@
 import React, { useState } from "react";
 import axios from "axios";
-import img1 from './ico.png';
+import Cards from "./Components/Cards";
+import Biodata from "./Components/Biodata";
+import ProfileImage from "./Components/ProfileImage";
+import PersonalityBar from "./Components/ProgressBars";
 
 function App() {
-  const [imageUrl, setImageUrl] = useState('');
-  const [button,setButton] = useState("⭯");
-  const [fields, setFields] = useState([]);
-  const[name,setName]=useState("");
- 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      var str;
-      setButton("LOADING ....");
-      const response = await axios.get(`http://127.0.0.1:5000/get_info`);
-      setButton("⭯");
-      str = response.data.message;
-      console.log(str);
-
-      let fieldsArray = [];
-      let labels = ["Name", "Age", "Gender", "Occupation", "Country", "Education"];
-      setName(str["Name"])
-      for (let i = 0; i < 6; i++) {
-        fieldsArray.push(
-          <div key={i} className="field">
-            <label className="label">{labels[i]}</label>
-            <label type="text" className="input">{str[labels[i]]}</label>
-          </div>
-        );
-      }
-      setFields(fieldsArray);
-    }
-    catch (err) {
-      setButton("⭯");
-      alert("API ERROR_TRY RELOADING");
-    }
-  };
+  const Personality = [
+    ["Introvert", "Extrovet", 40],
+    ["Introvert", "Extrovet", 50],
+    ["Introvert", "Extrovet", 60],
+  ];
 
   return (
-    <>
-      <nav className="navbar">PERSONA.AI</nav>
-      
-
-      <div className="container">
-        <div className="left-div">
-          <div className="card">
-            <img className="img" src={img1} alt="Placeholder" />
-            <h>{name}</h>
-          </div>
+    <div className="absolute bg-teal-500 h-full w-full flex items-center justify-center">
+      <div className=" w-[80%] h-[80%] flex flex-row rounded-md p-2 space-x-2 ">
+        <div className="w-[25%] h-full  rounded-l-lg flex flex-col space-y-2  ">
+          <ProfileImage imageUrl="https://picsum.photos/536/354" />
+          <Biodata
+            bioData={{
+              name: "John Doe Thomas",
+              job: "Architect",
+              bio: "tLorem Ipsum is simply dummy text of the printing and typesetting industry. rinter took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+              age: "11",
+              mStatus: "Single",
+              Location: "USA",
+            }}
+          />
         </div>
-
-        <div className="line"></div>  
-
-        <div className="fields-container">
-          <h className="fields-head">User <span className="red">Details</span></h>
-          <div className="each-field">
-            {fields}
+        <div className="  w-[75%] h-full  flex flex-row rounded-r-lg space-x-2">
+          <div className="w-[50%] flex  flex-col  space-y-2">
+            <Cards
+              heading="Goals"
+              heightPerc="40"
+              blurPer="30"
+              borderBool="0"
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut"
+            />
+            <Cards
+              heading="Need and Goals"
+              heightPerc="30"
+              blurPer="20"
+              borderBool="1"
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut"
+            />
+            <PersonalityBar
+              heading="Personality"
+              heightPerc="30"
+              blurPer="30"
+              borderBool="0"
+              Personality={Personality}
+              Type="1"
+            />
+          </div>
+          <div className="w-[50%] flex  flex-col  space-y-2">
+            <Cards
+              heading="Pain Points"
+              heightPerc="40"
+              blurPer="20"
+              borderBool="1"
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut"
+            />
+            <Cards
+              heading="Attiudes and Behavious"
+              heightPerc="30"
+              blurPer="30"
+              borderBool="0"
+              content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut"
+            />
+            <PersonalityBar
+              heading="Motivations"
+              heightPerc="40"
+              blurPer="20"
+              borderBool="1"
+              Personality={Personality}
+              Type="2"
+            />
           </div>
         </div>
       </div>
-
-      <div className="btn-grp">
-        <button className="button" onClick={handleSubmit}>{button}</button>
-      </div>
-    </>
+    </div>
   );
 }
 
