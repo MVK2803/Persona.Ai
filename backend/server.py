@@ -1,11 +1,7 @@
 from flask import Flask,jsonify
-import requests
-import base64
 import genAPI
 from flask_cors import CORS
-import urllib.request
-from PIL import Image
-import json
+
 app = Flask(__name__)  #flask object
 CORS(app)
 # Pass the required route to the decorator.
