@@ -1,4 +1,0 @@
-//flask app
-create venv
-create flask object
-create @app.route("/")

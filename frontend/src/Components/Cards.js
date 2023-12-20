@@ -1,4 +1,5 @@
 import React from "react";
+
 export default function Cards({
   heading,
   content,
@@ -6,18 +7,30 @@ export default function Cards({
   blurPer,
   borderBool,
 }) {
+  const cardStyles = {
+    width: "100%",
+    height: `calc(${heightPerc}% )`,
+    backgroundColor: "rgba(255, 255, 255, " + blurPer / 100 + ")",
+    borderRadius: "8px", // Adjust the value as needed
+    overflow: "hidden",
+    padding: "5px",
+    border: borderBool === "1" ? "2px solid rgba(255, 255, 255, 0.3)" : "none",
+  };
+  const bulletPoints = typeof content !== "string" ? content : "";
+  // console.log(bulletPoints);
   return (
-    <>
-      <div
-        className={`W-full ${
-          borderBool == 1
-            ? " border border-white  border-[2px] border-opacity-30"
-            : ""
-        } h-[${heightPerc}%] bg-white bg-opacity-[${blurPer}%] rounded-lg overflow-hidden p-[5px]`}
-      >
-        <h className="font-extrabold text-xl">{heading}</h>
-        <p>{content}</p>
-      </div>
-    </>
+    <div style={cardStyles}>
+      <h className="font-extrabold text-xl ">{heading}</h>
+
+      {bulletPoints === "" ? (
+        <p className="text-slate-500">{content}</p>
+      ) : (
+        <div className="flex flex-col text-slate-500">
+          {bulletPoints.map((value, index) => (
+            <p key={index}>• {value}</p>
+          ))}
+        </div>
+      )}
+    </div>
   );
 }
