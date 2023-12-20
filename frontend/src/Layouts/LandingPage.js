@@ -21,7 +21,9 @@ export default function LandingPage() {
   const handleGenerateClick = async () => {
     try {
       setPersonaLoading(true);
-      const response = await axios.get("/generate-persona");
+      const response = await axios.get(
+        "https://persona-backend-e9uc.onrender.com/generate-persona"
+      );
       // Handle the response data here
       // console.log(response.data);
       // Storing the object in localStorage
